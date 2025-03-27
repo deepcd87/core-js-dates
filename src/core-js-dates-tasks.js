@@ -243,13 +243,10 @@ function getNextFridayThe13th(date) {
   if (currentDate.getDate !== 13) {
     currentDate.setDate(13);
   }
-
-  while (true) {
-    if (currentDate.getDay() === 5) {
-      return currentDate;
-    }
+  while (currentDate.getDay() !== 5) {
     currentDate.setMonth(currentDate.getMonth() + 1);
   }
+  return currentDate;
 }
 
 /**
